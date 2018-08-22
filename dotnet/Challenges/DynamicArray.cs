@@ -14,6 +14,11 @@ namespace dotnet.Challenges
             var seqList = new List<List<int>>(n);
             var lastAns = 0;
 
+            for (var i = 0; i < n; i++)
+            {
+                seqList.Add(new List<int>());
+            }
+
             for (var i = 0; i < queries.Count; i++)
             {
                 var query = queries[i];
@@ -27,6 +32,11 @@ namespace dotnet.Challenges
                     if (seqList.Count < n)
                     {
                         seqList.Add(new List<int>());
+                    }
+                    if (seqIndex > seqList.Count)
+                    {
+                        Console.WriteLine("Incorrectly calculated index = {0}", seqIndex);
+                        return result;
                     }
                     seqList[seqIndex].Add(y);
                 }
