@@ -15,3 +15,7 @@ The log of my #100DaysOfCode challenge. Started on [August 22, 2018].
 ### R1D2
 - Solved the Dynamic Array challenge
 - https://www.hackerrank.com/challenges/dynamic-array/problem
+
+### R1D3
+- Solved the Reverse Array challenge
+- https://www.hackerrank.com/challenges/arrays-ds/problem

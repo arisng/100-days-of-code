@@ -52,35 +52,35 @@ namespace dotnet.Challenges
             return result;
         }
 
-        static void Main(string[] args)
-        {
-            try
-            {
-                var list = new List<int>();
+        // static void Main(string[] args)
+        // {
+        //     try
+        //     {
+        //         var list = new List<int>();
 
-                using (var file = new StreamReader(@"F:\My Work Space\Github\100-days-of-code\dotnet\TestCases\DynamicArray\DynamicArray2.txt"))
-                {
-                    string[] nq = file.ReadLine().TrimEnd().Split(' ');
+        //         using (var file = new StreamReader(@"F:\My Work Space\Github\100-days-of-code\dotnet\TestCases\DynamicArray\DynamicArray2.txt"))
+        //         {
+        //             string[] nq = file.ReadLine().TrimEnd().Split(' ');
 
-                    int n = Convert.ToInt32(nq[0]);
+        //             int n = Convert.ToInt32(nq[0]);
 
-                    int q = Convert.ToInt32(nq[1]);
+        //             int q = Convert.ToInt32(nq[1]);
 
-                    List<List<int>> queries = new List<List<int>>();
+        //             List<List<int>> queries = new List<List<int>>();
 
-                    for (int i = 0; i < q; i++)
-                    {
-                        queries.Add(file.ReadLine().TrimEnd().Split(' ').ToList().Select(queriesTemp => Convert.ToInt32(queriesTemp)).ToList());
-                    }
+        //             for (int i = 0; i < q; i++)
+        //             {
+        //                 queries.Add(file.ReadLine().TrimEnd().Split(' ').ToList().Select(queriesTemp => Convert.ToInt32(queriesTemp)).ToList());
+        //             }
 
-                    List<int> result = DynamicArray(n, queries);
-                    Console.WriteLine(String.Join("\n", result));
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
+        //             List<int> result = DynamicArray(n, queries);
+        //             Console.WriteLine(String.Join("\n", result));
+        //         }
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         Console.WriteLine(ex);
+        //     }
+        // }
     }
 }
