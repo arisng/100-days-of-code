@@ -13,3 +13,5 @@ The log of my #100DaysOfCode challenge. Started on [August 22, 2018].
 - github repo: https://github.com/arisng/100-days-of-code
 
 ### R1D2
+- Solved the Dynamic Array challenge
+- https://www.hackerrank.com/challenges/dynamic-array/problem
