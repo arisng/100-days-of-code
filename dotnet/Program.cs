@@ -13,18 +13,36 @@ using System.Text;
 using System;
 using dotnet.Challenges;
 
-public class Program {
+public class Program
+{
     static void Main(string[] args)
     {
         try
         {
-            using (var file = new StreamReader(@"F:\My Work Space\Github\100-days-of-code\dotnet\Challenges\TestCases\ReverseArray\ReverseArray1.txt"))
+            using (var file = new StreamReader(@"F:\My Work Space\Github\100-days-of-code\dotnet\Challenges\TestCases\SparseArray\SparseArray3.txt"))
             {
-                int arrCount = Convert.ToInt32(file.ReadLine());
-                int[] arr = Array.ConvertAll(file.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
+                int stringsCount = Convert.ToInt32(file.ReadLine());
 
-                var result = ReverseArraySolution.ReverseArray(arr);
-                Console.WriteLine(String.Join(" ", result));
+                string[] strings = new string[stringsCount];
+
+                for (int i = 0; i < stringsCount; i++)
+                {
+                    string stringsItem = file.ReadLine();
+                    strings[i] = stringsItem;
+                }
+
+                int queriesCount = Convert.ToInt32(file.ReadLine());
+
+                string[] queries = new string[queriesCount];
+
+                for (int i = 0; i < queriesCount; i++)
+                {
+                    string queriesItem = file.ReadLine();
+                    queries[i] = queriesItem;
+                }
+
+                int[] res = SparseArraySolution.MatchingStrings(strings, queries);
+                Console.WriteLine(string.Join("\n", res));
             }
         }
         catch (Exception ex)

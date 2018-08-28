@@ -19,3 +19,7 @@ The log of my #100DaysOfCode challenge. Started on [August 22, 2018].
 ### R1D3
 - Solved the Reverse Array challenge
 - https://www.hackerrank.com/challenges/arrays-ds/problem
+
+### R1D4
+- Solved the Sparse Array challenge
+- https://www.hackerrank.com/challenges/sparse-arrays/problem

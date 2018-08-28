@@ -35,18 +35,23 @@ namespace dotnet.Challenges
             return result;
         }
 
-        // static void Main(string[] args) {
-        //     TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+        // static void Main(string[] args)
+        // {
+        //     try
+        //     {
+        //         using (var file = new StreamReader(@"F:\My Work Space\Github\100-days-of-code\dotnet\Challenges\TestCases\ReverseArray\ReverseArray1.txt"))
+        //         {
+        //             int arrCount = Convert.ToInt32(file.ReadLine());
+        //             int[] arr = Array.ConvertAll(file.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
 
-        //     int arrCount = Convert.ToInt32(Console.ReadLine());
-
-        //     int[] arr = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
-        //     int[] res = ReverseArray(arr);
-
-        //     textWriter.WriteLine(string.Join(" ", res));
-
-        //     textWriter.Flush();
-        //     textWriter.Close();
+        //             var result = ReverseArraySolution.ReverseArray(arr);
+        //             Console.WriteLine(String.Join(" ", result));
+        //         }
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         Console.WriteLine(ex);
+        //     }
         // }
     }
 }
