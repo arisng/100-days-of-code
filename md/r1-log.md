@@ -27,3 +27,8 @@ The log of my #100DaysOfCode challenge. Started on [August 22, 2018].
 ### R1D5
 - WIP: Solving the ArrayManipulation challenge
 - https://www.hackerrank.com/challenges/crush/problem
+
+### R1D6
+- Renamed the dotnet project to HackerRank.Challenges project
+- Move all md files to the md folder
+- Added NUnit tests and updated gitignore file
