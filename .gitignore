@@ -1,1 +1,4 @@
-dotnet/bin/Debug/*
+HackerRank.Challenges/bin/*
+HackerRank.Challenges/obj/*
+HackerRank.Challenges.Tests/bin/*
+HackerRank.Challenges.Tests/obj/*
