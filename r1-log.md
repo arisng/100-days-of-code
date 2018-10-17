@@ -23,3 +23,7 @@ The log of my #100DaysOfCode challenge. Started on [August 22, 2018].
 ### R1D4
 - Solved the Sparse Array challenge
 - https://www.hackerrank.com/challenges/sparse-arrays/problem
+
+### R1D5
+- WIP: Solving the ArrayManipulation challenge
+- https://www.hackerrank.com/challenges/crush/problem
