@@ -29,4 +29,8 @@ The log of my #100DaysOfCode challenge. Started on [August 22, 2018].
 - https://www.hackerrank.com/challenges/crush/problem
 
 ### R1D6
-- added .sln file
+- added .sln file.
+- Solved the "Print elements of a singly linked list" challenge.
+
+### R1D7
+- Solved the "Reverse a singly linked list" challenge.

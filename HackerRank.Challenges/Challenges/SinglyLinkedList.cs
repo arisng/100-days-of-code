@@ -66,16 +66,40 @@ namespace HackerRank.Challenges
          * }
          *
          */
-        public void PrintLinkedList()
+        public static void PrintLinkedList(SinglyLinkedListNode head)
         {
             var current = head;
 
             while (current != null)
             {
-                printedString += current.data + "\n";
+                // printedString += current.data + "\n";
                 Console.WriteLine(current.data);
                 current = current.next;
             }
+        }
+
+        public static SinglyLinkedListNode ReverseList(SinglyLinkedListNode head)
+        {
+            var cur = head;
+            var nex = cur.next;
+            var temp = nex.next;
+
+            head.next = null;
+
+            while (nex != null)
+            {
+                nex.next = cur;
+
+                cur = nex;
+                nex = temp;
+                
+                if (temp != null)
+                {
+                    temp = temp.next;
+                }
+            }
+
+            return cur;
         }
     }
 
