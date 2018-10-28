@@ -32,3 +32,4 @@ The log of my #100DaysOfCode challenge. Started on [August 22, 2018].
 - Renamed the dotnet project to HackerRank.Challenges project
 - Move all md files to the md folder
 - Added NUnit tests and updated gitignore file
+- added .sln file
