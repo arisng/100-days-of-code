@@ -37,3 +37,6 @@ The log of my #100DaysOfCode challenge. Started on [August 22, 2018].
 
 ### R1D7
 - Solved the "Reverse a singly linked list" challenge.
+
+### R1D8
+- Solved the "Reverse singly linked list" using recursive approach.

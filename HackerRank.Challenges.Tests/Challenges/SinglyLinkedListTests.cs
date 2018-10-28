@@ -9,11 +9,15 @@ namespace HackerRank.Challenges.Tests.Challenges
     public class SinglyLinkedListTests
     {
         private SinglyLinkedList _singlyLinkedList;
+        private string dir;
 
         [SetUp]
         public void Setup()
         {
             _singlyLinkedList = new SinglyLinkedList();
+            dir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            var index = dir.IndexOf("HackerRank");
+            dir = dir.Remove(index);
         }
 
         [Test]
@@ -58,7 +62,7 @@ namespace HackerRank.Challenges.Tests.Challenges
             // Assign
             try
             {
-                using (var file = new StreamReader(@"D:\Devl\Side Projects\100-days-of-code\HackerRank.Challenges.Tests\TestCases\SinglyLinkedList\ReverseTheList.txt"))
+                using (var file = new StreamReader(dir + @"HackerRank.Challenges.Tests\TestCases\SinglyLinkedList\ReverseTheList.txt"))
                 {
                     var testCaseNum = Convert.ToInt32(file.ReadLine());
                     var listCount = Convert.ToInt32(file.ReadLine());
@@ -74,13 +78,17 @@ namespace HackerRank.Challenges.Tests.Challenges
             {
                 Console.WriteLine(ex);
             }
+            Console.WriteLine("Original Linked List:");
+            SinglyLinkedList.PrintLinkedList(_singlyLinkedList.head);
 
             // Act
-            var head = SinglyLinkedList.ReverseList(_singlyLinkedList.head);
+            var head = SinglyLinkedList.ReverseRecursive(_singlyLinkedList.head);
             
             // Assert
             Assert.IsTrue(head != null, "head should not be null.");
             Console.WriteLine("Head = " + head.data);
+            Console.WriteLine("Reversed Linked List:");
+            SinglyLinkedList.PrintLinkedList(head);
         }
     }
 }

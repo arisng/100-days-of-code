@@ -72,8 +72,7 @@ namespace HackerRank.Challenges
 
             while (current != null)
             {
-                // printedString += current.data + "\n";
-                Console.WriteLine(current.data);
+                Console.Write(string.Format("{0} {1}", current.data, current.next == null ? "\n" : "->"));
                 current = current.next;
             }
         }
@@ -100,6 +99,18 @@ namespace HackerRank.Challenges
             }
 
             return cur;
+        }
+
+        public static SinglyLinkedListNode ReverseRecursive(SinglyLinkedListNode head)
+        {
+            if (head == null || head.next == null) return head;
+
+            var newHead = ReverseList(head.next);
+
+            head.next.next = head;
+            head.next = null;
+
+            return newHead;
         }
     }
 
