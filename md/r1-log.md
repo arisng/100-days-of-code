@@ -33,3 +33,7 @@ The log of my #100DaysOfCode challenge. Started on [August 22, 2018].
 - Move all md files to the md folder
 - Added NUnit tests and updated gitignore file
 - added .sln file
+- Solved the "Print elements of a singly linked list" challenge.
+
+### R1D7
+- Solved the "Reverse a singly linked list" challenge.
