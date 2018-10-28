@@ -90,5 +90,35 @@ namespace HackerRank.Challenges.Tests.Challenges
             Console.WriteLine("Reversed Linked List:");
             SinglyLinkedList.PrintLinkedList(head);
         }
+
+        [Test]
+        public void Should_Insert_At_Tail_Successfully()
+        {
+            SinglyLinkedListNode head = null;
+            // Assign
+            try
+            {
+                using (var file = new StreamReader(dir + @"HackerRank.Challenges.Tests\TestCases\SinglyLinkedList\InsertAtTail.txt"))
+                {
+                    var listCount = Convert.ToInt32(file.ReadLine());
+
+                    for (int i = 0; i < listCount; i++)
+                    {
+                        var listItem = Convert.ToInt32(file.ReadLine());
+                        // Act
+                        head = SinglyLinkedList.InsertAtTailRecursive(_singlyLinkedList.head, listItem);
+                        _singlyLinkedList.head = head;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            
+            // Assert
+            Assert.IsTrue(head != null, "head should not be null.");
+            SinglyLinkedList.PrintLinkedList(head);
+        }
     }
 }

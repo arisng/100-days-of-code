@@ -40,3 +40,4 @@ The log of my #100DaysOfCode challenge. Started on [August 22, 2018].
 
 ### R1D8
 - Solved the "Reverse singly linked list" using recursive approach.
+- Solved the "Insert at tail".

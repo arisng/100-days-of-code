@@ -112,6 +112,44 @@ namespace HackerRank.Challenges
 
             return newHead;
         }
+
+        public static SinglyLinkedListNode InsertAtTail(SinglyLinkedListNode head, int data)
+        {
+            if (head == null)
+            {
+                return new SinglyLinkedListNode(data);
+            }
+
+            var current = head;
+
+            while (current.next != null)
+            {
+                current = current.next;
+            }
+
+            current.next = new SinglyLinkedListNode(data);
+
+            return head;
+        }
+
+        public static SinglyLinkedListNode InsertAtTailRecursive(SinglyLinkedListNode head, int data)
+        {
+            if (head == null)
+            {
+                head = new SinglyLinkedListNode(data);
+                return head;
+            }
+            
+            if (head.next == null)
+            {
+                head.next = new SinglyLinkedListNode(data);
+                return head;
+            }
+
+            var temp = InsertAtTailRecursive(head.next, data);
+
+            return head;
+        }
     }
 
     // static void Main(string[] args) {
