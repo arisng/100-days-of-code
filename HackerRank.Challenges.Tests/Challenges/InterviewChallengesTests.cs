@@ -30,7 +30,7 @@ namespace HackerRank.Challenges.Tests.Challenges
             var n = 0;
             try
             {
-                using (var file = new StreamReader(dir + @"HackerRank.Challenges.Tests\TestCases\FindMissingNumberTestCase1.txt"))
+                using (var file = new StreamReader(dir + @"HackerRank.Challenges.Tests\TestCases\InterviewChallenges\FindMissingNumberTestCase1.txt"))
                 {
                     n = Convert.ToInt32(file.ReadLine());
                     array = Array.ConvertAll(file.ReadLine().Split(','), num => Convert.ToInt32(num));
