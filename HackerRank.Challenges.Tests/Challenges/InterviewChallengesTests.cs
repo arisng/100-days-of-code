@@ -3,7 +3,8 @@ using HackerRank.Challenges;
 using System.IO;
 using System;
 using System.Collections.Generic;
-using static HackerRank.Challenges.InterviewChallenges;
+using HackerRank.Challenges.Hoozing;
+using static HackerRank.Challenges.Hoozing.InterviewChallenges;
 
 namespace HackerRank.Challenges.Tests.Challenges
 {

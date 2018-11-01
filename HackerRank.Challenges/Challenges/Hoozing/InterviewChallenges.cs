@@ -13,7 +13,7 @@ using System.Text;
 using System;
 using System.Net.Mail;
 
-namespace HackerRank.Challenges
+namespace HackerRank.Challenges.Hoozing
 {
     public class InterviewChallenges
     {
