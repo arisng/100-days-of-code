@@ -19,7 +19,7 @@ public class Program
     {
         try
         {
-            using (var file = new StreamReader(@"F:\My Work Space\Github\100-days-of-code\dotnet\Challenges\TestCases\ArrayManipulation\ArrayManipulationTestCase4.txt"))
+            using (var file = new StreamReader(@"D:\Devl\Side Projects\100-days-of-code\HackerRank.Challenges\Challenges\TestCases\ArrayManipulation\ArrayManipulationTestCase1.txt"))
             {
                 string[] nm = file.ReadLine().Split(' ');
 
