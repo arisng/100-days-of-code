@@ -1,5 +1,23 @@
 public void Register(UserModel user)
 {
+	if (!Validate(user)) return;
+
+	try
+	{
+		_userService.SaveUser(user);
+		SendMail(user);
+	}
+	catch (Exception ex)
+	{
+		Console.WriteLine("The name of the application or the object that causes the error: ", ex.Source);
+		Console.WriteLine("Message that describes the current exception: ", ex.Message);
+		Console.WriteLine("The method that throws the current exception: ", ex.TargetSite);
+		Console.WriteLine("Stack Trace: ", ex.StackTrace);
+	}
+}
+
+public bool Validate(UserModel user)
+{
 	bool validate = true;
 	string errorMessage = "";
 
@@ -49,26 +67,20 @@ public void Register(UserModel user)
 		}
 	}
 
-	if (!validate) return;
+	if (!validate)
+		Console.WriteLine(errorMessage);
 
-	try
-	{
-		_userService.SaveUser(user);
+	return validate;
+}
 
-		MailMessage message = new MailMessage();
-		message.To.Add(user.Email);
-		message.Subject = "Register";
-		message.From = new System.Net.Mail.MailAddress("admin@hotmail.com");
-		message.Body = "Thank you for your register";
-		SmtpClient smtp = new SmtpClient();
-		smtp.Host = "smtp.gmail.com";
-		smtp.Send(message);
-	}
-	catch (Exception ex)
-	{
-		Console.WriteLine("The name of the application or the object that causes the error: ", ex.Source);
-		Console.WriteLine("Message that describes the current exception: ", ex.Message);
-		Console.WriteLine("The method that throws the current exception: ", ex.TargetSite);
-		Console.WriteLine("Stack Trace: ", ex.StackTrace);
-	}
+public void SendMail(UserModel user)
+{
+	MailMessage message = new MailMessage();
+	message.To.Add(user.Email);
+	message.Subject = "Register";
+	message.From = new System.Net.Mail.MailAddress("admin@hotmail.com");
+	message.Body = "Thank you for your register";
+	SmtpClient smtp = new SmtpClient();
+	smtp.Host = "smtp.gmail.com";
+	smtp.Send(message);
 }
