@@ -1,0 +1,14 @@
+DECLARE @StartDate DATETIME, @EndDate DATETIME
+SET @StartDate = DATEADD(mm, DATEDIFF(mm,0,getdate())-1, 0)
+SET @EndDate = DATEADD(mm, 1, @StartDate)
+
+
+SELECT MAX(QuantitySum), ProductName, OrderDate
+FROM (SELECT p.ProductName, SUM(Quantity) AS QuantitySum, o.OrderDate
+      FROM [OrderDetails] od
+      INNER JOIN [Orders] o ON o.OrderId = od.OrderId
+      	AND o.OrderDate BETWEEN @StartDate AND @EndDate
+      INNER JOIN [Products] p ON p.ProductId = od.ProductId
+      GROUP BY od.ProductId
+      ORDER BY QuantitySum DESC)
+      

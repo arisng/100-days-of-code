@@ -1,0 +1,74 @@
+public void Register(UserModel user)
+{
+	bool validate = true;
+	string errorMessage = "";
+
+	// Validate username
+	if (String.IsNullOrEmpty(user.UserName))
+	{
+		errorMessage += "You must specify a username.\n";
+		validate = false;
+	}
+	else {
+		Regex RgxUrl = new Regex("[^a-z0-9]");
+		var isContainsSpecialCharacters = RgxUrl.IsMatch(user.Username);
+		if (isContainsSpecialCharacters) {
+			errorMessage += "Username must not contains special characters.\n";
+			validate = false;
+		}
+		if (!validate) return;
+
+		var existedUser = _userService.GetUserByUsername(user.Username);
+		if (existedUser != null ) {
+			errorMessage += "User with that username and/or email already exists.\n";
+			validate = false;
+		}
+
+		// Validate password
+		if (String.IsNullOrEmpty(user.Password) || user.Password.Length < 6)
+		{
+			errorMessage += string.Format("You must specify a password of {0} or more characters.\n", 6);
+			validate = false;
+		}
+		else if (!String.Equals(user.Password, user.ConfirmPassword, StringComparison.Ordinal))
+		{
+			errorMessage += "The new password and confirmation password do not match.\n";
+			validate = false;
+		}
+
+		// Validate email
+		if (String.IsNullOrEmpty(user.Email.ToString()))
+		{
+			errorMessage += "You must specify an email address.\n";
+			validate = false;
+		}
+		else if (!Regex.IsMatch(user.Email.ToString(), @"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$.", RegexOptions.IgnoreCase))
+		{
+			errorMessage += "You must specify a valid email address.\n";
+			validate = false;
+		}
+	}
+
+	if (!validate) return;
+
+	try
+	{
+		_userService.SaveUser(user);
+
+		MailMessage message = new MailMessage();
+		message.To.Add(user.Email);
+		message.Subject = "Register";
+		message.From = new System.Net.Mail.MailAddress("admin@hotmail.com");
+		message.Body = "Thank you for your register";
+		SmtpClient smtp = new SmtpClient();
+		smtp.Host = "smtp.gmail.com";
+		smtp.Send(message);
+	}
+	catch (Exception ex)
+	{
+		Console.WriteLine("The name of the application or the object that causes the error: ", ex.Source);
+		Console.WriteLine("Message that describes the current exception: ", ex.Message);
+		Console.WriteLine("The method that throws the current exception: ", ex.TargetSite);
+		Console.WriteLine("Stack Trace: ", ex.StackTrace);
+	}
+}
