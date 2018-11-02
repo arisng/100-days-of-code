@@ -9,6 +9,7 @@ public void Register(UserModel user)
 	}
 	catch (Exception ex)
 	{
+		// Do some logging here
 		Console.WriteLine("The name of the application or the object that causes the error: ", ex.Source);
 		Console.WriteLine("Message that describes the current exception: ", ex.Message);
 		Console.WriteLine("The method that throws the current exception: ", ex.TargetSite);
